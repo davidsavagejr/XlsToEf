@@ -31,6 +31,7 @@ namespace XlsToEf.Tests
 
         public Task<List<Dictionary<string, string>>> GetRows(string filePath, string sheetName)
         {
+            FileName = filePath;
             return Task.FromResult(Rows);
         }
 
@@ -44,5 +45,7 @@ namespace XlsToEf.Tests
             IList<string> result = new List<string> { "xlsCol1", "xlsCol2", "xlsCol3", "xlsCol4", "xlsCol5", "xlsCol6", "xlsCol7" };
             return Task.FromResult(result);
         }
+
+        public string FileName { get; set; }
     }
 }
